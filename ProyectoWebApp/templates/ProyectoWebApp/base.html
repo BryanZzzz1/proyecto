@@ -1,0 +1,91 @@
+<html>
+
+<head>
+<body>
+    
+    {% load static %}
+
+    <!-- Bootstrap -->
+    <link href="{% static 'ProyectoWebApp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+     <!-- Fonts -->
+    
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+     
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'ProyectoWebApp/css/gestion.css' %}">
+    <link rel="stylesheet" href="{% static 'ProyectoWebApp/css/Footer.css' %}">
+    <link rel="stylesheet" href="{% static 'ProyectoWebApp/css/styleinicio.css' %}">
+</head>
+
+ <!-- Navbar -->
+<header class="header">
+  <nav class="nav">
+    <a style="font-family: Poppins, sans-serif;" href="{% url 'Home' %}" class="nav_logo">AUTOS DEL MAR</a>
+    <ul class="nav_items">
+        <li class="nav_item">
+            <a style="font-family: Poppins, sans-serif;" shref="{% url 'Home' %}" class="nav_link">Inicio</a>
+            <a style="font-family: Poppins, sans-serif;" href="{% url 'Tienda' %}" class="nav_link">Vehiculos</a>
+            
+            {% if user.is_authenticated %}
+            ¡Bienvenido, {{ user.username }}! &nbsp; &nbsp;
+            <a class="button" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
+        {% else %}
+            <a class="button" href="{% url 'logeo' %}">Login</a> &nbsp;
+            <a class="button" href="{% url 'Autenticacion' %}">Registrate</a>
+        {% endif %}
+    
+        </li>
+    </ul>
+</nav>
+</header>
+  
+
+
+ <!-- contenido cambiante -->
+  {% block contenido %}
+
+
+
+
+
+  {% endblock %}
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+ <footer>
+        <div class="container">
+            <div class="footer-content">
+              <h3 style="font-family: Poppins, sans-serif;" >Contactanos</h3>
+              <p style="font-family: Poppins, sans-serif;">Email:Autosdelmar@mar.cl</p>
+              <p style="font-family: Poppins, sans-serif;">Telefono:+569001002003</p>
+              <p style="font-family: Poppins, sans-serif;">Direccion:Santiago - Av. Departamental 4500</p>
+            </div>
+            <div class="footer-content">
+                <h3 style="font-family: Poppins, sans-serif;">Liks Rapidos</h3>
+                 <ul class="list">
+                    <li><a style="font-family: Poppins, sans-serif; text-decoration: none; color: #ffffff;  " href="{% url 'Home' %}">inicio</a></li>
+                    <li><a style=" font-family: Poppins, sans-serif;text-decoration: none; color: #ffffff;" href="{% url 'Tienda' %}">Vehiculos</a></li>
+                    
+                    
+                 </ul>
+            </div>
+            <div class="footer-content">
+                <h3 style="font-family: Poppins, sans-serif;">Siguenos</h3>
+                </div>
+        </div>
+        <div class="bottom-bar">
+            <p style="font-family: Poppins, sans-serif;">&copy; 2024 AUTOS DEL MAR . All rights reserved</p>
+        </div>
+      </footer>
+
+    <!-- Bootstrap -->
+   
+
+</body>
+
+</html>

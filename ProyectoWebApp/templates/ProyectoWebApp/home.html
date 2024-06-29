@@ -1,0 +1,24 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+
+<link rel="stylesheet" href="{% static 'ProyectoWebApp/css/styleinicio.css' %}">
+
+   <!-- Heading -->
+   <section class="home">
+    <video autoplay muted loop id="bgVideo">
+        <source src="{% static 'ProyectoWebApp/video/video1.mp4' %}" type="video/mp4">
+    </video>
+    <div class="form_container">
+        <i class="uil uil-times form_close"></i>
+    </div>
+</section>
+ 
+    <!-- Message -->
+
+
+  {% endblock %}
+
